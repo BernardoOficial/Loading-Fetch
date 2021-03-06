@@ -11,17 +11,23 @@
 </head>
 <body>
     
-    <h1>Loading Fetch</h1>
+    <span data-load-window></span>
+    
+    <section data-visible>
+        <h1>Loading Fetch</h1>
+        
+        <button data-search-filmes>
+            Buscar filmes
+        </button>
+        
+        <span data-loading></span>
+        <span data-mensagem></span>
 
-    <button data-search-filmes>
-        Buscar filmes
-    </button>
+        <section class="lista-filmes" data-lista-filmes></section>
 
-    <span data-loading></span>
-    <span data-mensagem></span>
+    </section>
 
-    <section class="lista-filmes" data-lista-filmes></section>
-
+    
     <script type="module" src="./js/main.js"></script>
 </body>
 </html>

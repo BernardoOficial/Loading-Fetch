@@ -1,9 +1,29 @@
 import { fetchDados } from "./fetchDados.js"
 
+// Efeito no carregamento da janela
+const windowLoading = document.querySelector("[data-load-window]");
+const sectionVisivel = document.querySelector("[data-visible]");
+
 const buttonSearch = document.querySelector("[data-search-filmes]");
 const divLoading = document.querySelector("[data-loading]");
 const listaFilmes = document.querySelector("[data-lista-filmes]");
 const mensagem = document.querySelector("[data-mensagem]");
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Não carreguei o conteúdo ainda");
+    windowLoading.classList.add("loading");
+    sectionVisivel.style.visibility = 'hidden';
+});
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+        console.log("Carreguei o conteúdo!");
+        windowLoading.classList.remove("loading");
+        sectionVisivel.style.visibility = "visible";
+    }, 2000);
+
+});
 
 const createElement = tag => {
     return document.createElement(tag);
