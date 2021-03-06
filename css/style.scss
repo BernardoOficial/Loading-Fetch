@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Calibri, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px 20px;
+
+    h1 {
+        font-size: 3rem;
+        color: #333333;
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 15px;
+        background-color: #333333;
+        border: none;
+        border-radius: 8px;
+        outline: none;
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-align: center;
+        color: #e1b526;
+        margin-bottom: 40px;
+
+        &:hover {
+            background-color: #444444;
+        }
+    }
+}
+
+.loading {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #333333;
+    border-top: 5px solid #e1b526;
+    animation: rotate 2s linear infinite;
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+.mensagem {
+    display: block;
+    padding: 30px;
+    background-color: #801d07;
+    border-radius: 8px;
+
+    h1, p {
+        color: #dddddd;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+.lista-filmes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+    & > div {
+        background-color: #222222;
+        border-radius: 5px;
+        padding: 25px 15px;
+        transition: transform 0.3s linear;
+        animation: up 0.5s linear;
+
+        @keyframes up {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        &:hover {
+            transition: transform 0.3s linear;
+            transform: scale(1.01) translateY(-15px);
+        }
+
+        h2 {
+            color: #999999;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: #777777;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        span {
+            display: inline-block;
+            background-color: #e1b526;
+            border-radius: 10px;
+            padding: 5px 8px;
+            color: #222222;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+    }
+}
